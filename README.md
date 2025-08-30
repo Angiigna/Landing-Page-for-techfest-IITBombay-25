@@ -9,4 +9,4 @@ This repository contains my submission for one of the **Campus Ambassador tasks*
 - Glitch effect on text
 - CyberPunk aesthetic using scanline ovrlay, neon glow effects and flickering animations
 
-** Find the landing page here -** https://angiigna.github.io/Landing-Page-for-techfest-IITBombay-25/
+** Find the landing page here - ** https://angiigna.github.io/Landing-Page-for-techfest-IITBombay-25/
