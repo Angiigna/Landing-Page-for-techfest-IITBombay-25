@@ -1,0 +1,447 @@
+/*Base styling*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+@font-face {
+  font-family: "Nitro Break";
+  src: url("NitroBreak.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #101720;
+  font-family: "Exo 2", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/*hero section styling*/
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+.hero h1 {
+  font-family: "Nitro Break", sans-serif;
+  font-size: 10rem;
+  font-weight: 400;
+  color: #00f5ff;
+  text-shadow: 0 0 15px #00f5ff, 0 0 30px #00f5ff;
+  animation: glow 2s infinite alternate;
+}
+
+.hero p {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+  }
+  to {
+    text-shadow: 0 0 20px #00f5ff, 0 0 60px #00f5ff;
+  }
+}
+
+/*Making the particle effects*/
+.particle1,
+.particle2,
+.particle3 {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle1 span,
+.particle2 span,
+.particle3 span {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.particle1 span {
+  background: #fe53bb;
+  box-shadow: 0 0 10px #fe53bb, 0 0 20px #fe53bb;
+}
+.particle2 span {
+  background: #09fbd3;
+  box-shadow: 0 0 10px #09fbd3, 0 0 20px #09fbd3;
+}
+.particle3 span {
+  background: #f5d300;
+  box-shadow: 0 0 10px #f5d300, 0 0 20px #f5d300;
+}
+
+@keyframes fly-up {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+@keyframes fly-down {
+  from {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+@keyframes fly-left {
+  from {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+@keyframes fly-right {
+  from {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+@keyframes fly-diag1 {
+  from {
+    transform: translate(100vw, 100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-100vw, -100vh);
+    opacity: 0;
+  }
+}
+@keyframes fly-diag2 {
+  from {
+    transform: translate(-100vw, 100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translate(100vw, -100vh);
+    opacity: 0;
+  }
+}
+
+.particle1 span:nth-child(1) {
+  animation: fly-up 4s linear infinite;
+  left: 10%;
+  top: 80%;
+}
+.particle1 span:nth-child(2) {
+  animation: fly-right 5s linear infinite;
+  left: 20%;
+  top: 30%;
+}
+.particle1 span:nth-child(3) {
+  animation: fly-left 3s linear infinite;
+  left: 50%;
+  top: 50%;
+}
+.particle1 span:nth-child(4) {
+  animation: fly-diag1 2s linear infinite;
+  left: 70%;
+  top: 90%;
+}
+.particle1 span:nth-child(5) {
+  animation: fly-diag2 4s linear infinite;
+  left: 85%;
+  top: 40%;
+}
+.particle1 span:nth-child(6) {
+  animation: fly-down 5s linear infinite;
+  left: 40%;
+  top: 10%;
+}
+.particle1 span:nth-child(7) {
+  animation: fly-up 3s linear infinite;
+  left: 90%;
+  top: 60%;
+}
+
+.particle2 span:nth-child(1) {
+  animation: fly-right 2s linear infinite;
+  left: 10%;
+  top: 80%;
+}
+.particle2 span:nth-child(2) {
+  animation: fly-up 3s linear infinite;
+  left: 20%;
+  top: 30%;
+}
+.particle2 span:nth-child(3) {
+  animation: fly-diag1 3s linear infinite;
+  left: 50%;
+  top: 50%;
+}
+.particle2 span:nth-child(4) {
+  animation: fly-left 4s linear infinite;
+  left: 70%;
+  top: 90%;
+}
+.particle2 span:nth-child(5) {
+  animation: fly-up 1s linear infinite;
+  left: 85%;
+  top: 40%;
+}
+.particle2 span:nth-child(6) {
+  animation: fly-diag2 3s linear infinite;
+  left: 40%;
+  top: 10%;
+}
+.particle2 span:nth-child(7) {
+  animation: fly-down 5s linear infinite;
+  left: 90%;
+  top: 60%;
+}
+
+.particle3 span:nth-child(1) {
+  animation: fly-diag1 2s linear infinite;
+  left: 10%;
+  top: 80%;
+}
+.particle3 span:nth-child(2) {
+  animation: fly-down 5s linear infinite;
+  left: 20%;
+  top: 30%;
+}
+.particle3 span:nth-child(3) {
+  animation: fly-right 3s linear infinite;
+  left: 50%;
+  top: 50%;
+}
+.particle3 span:nth-child(4) {
+  animation: fly-diag2 4s linear infinite;
+  left: 70%;
+  top: 90%;
+}
+.particle3 span:nth-child(5) {
+  animation: fly-up 2s linear infinite;
+  left: 85%;
+  top: 40%;
+}
+.particle3 span:nth-child(6) {
+  animation: fly-left 3s linear infinite;
+  left: 40%;
+  top: 10%;
+}
+
+
+/*call to action button styling*/
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #00f5ff;
+  border-radius: 30px;
+  color: #00f5ff;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cta:hover {
+  background: #00f5ff;
+  color: black;
+  box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+}
+
+/*highlight section styling*/
+.highlights {
+  padding: 100px 10%;
+  background: #0d111a;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlights::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,255,0.05) 0px,
+    rgba(0,255,255,0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  animation: scan 5s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+
+/*Styling the cards for each event*/
+.card {
+  max-width: 700px;
+  background: #161d2a;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+.card {
+  position: relative;
+  background: #161d2a;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 5px #00f5ff, 0 0 20px rgba(0,255,255,0.3);
+  transition: transform 0.2s;
+  animation: flicker 3s infinite;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f0f, 0 0 40px #0ff;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+  }
+}
+
+
+/*Glitch effect for the titiles */
+.card h2 {
+  position: relative;
+  font-size: 2rem;
+  color: #00f5ff;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.card h2::before,
+.card h2::after {
+  content: attr(data-text);     
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #f0f;
+  clip: rect(0, 0, 0, 0);       
+}
+.card h2::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: #f0f;                  
+}
+
+.card h2::after {
+  animation: glitchBottom 2s infinite linear alternate-reverse;
+  color: #0ff;                 
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(0, 9999px, 20px, 0); transform: translate(-2px,-2px);}
+  40% { clip: rect(0, 9999px, 0, 0); }
+  60% { clip: rect(0, 9999px, 20px, 0); transform: translate(2px,2px);}
+  80% { clip: rect(0, 9999px, 0, 0); }
+  100% { clip: rect(0, 9999px, 20px, 0); transform: translate(-1px,1px);}
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(0, 9999px, 15px, 0); transform: translate(2px,1px);}
+  40% { clip: rect(0, 9999px, 0, 0); }
+  60% { clip: rect(0, 9999px, 15px, 0); transform: translate(-2px,-1px);}
+  80% { clip: rect(0, 9999px, 0, 0); }
+  100% { clip: rect(0, 9999px, 15px, 0); transform: translate(1px,-2px);}
+}
+
+.card p {
+  opacity: 0.85;
+  line-height: 1.5;
+  font-family: 'exo 2', sans-serif;
+  font-size: 1.3rem;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.6s; }
+.card:nth-child(3) { animation-delay: 0.9s; }
+.card:nth-child(4) { animation-delay: 1.2s; }
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Footer styling*/
+
+.footer {
+  background: #0d111a;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid rgba(0, 245, 255, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.footer a {
+  color: #00f5ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f0f;
+  text-shadow: 0 0 5px #f0f, 0 0 10px #0ff;
+}
+
